@@ -2,8 +2,12 @@
 
 package com.zachklipp.compose.backstack
 
+import androidx.ui.core.IntrinsicMeasureBlock
 import androidx.ui.core.LayoutDirection
 import androidx.ui.core.LayoutModifier
+import androidx.ui.core.MeasureBlock
+import androidx.ui.core.MeasureScope
+import androidx.ui.core.MeasuringIntrinsicsMeasureBlocks
 import androidx.ui.unit.Density
 import androidx.ui.unit.IntPxPosition
 import androidx.ui.unit.IntPxSize
@@ -80,7 +84,12 @@ class SlideTransitionTest {
     private fun LayoutModifier.modifyPosition(
         containerSize: IntPxSize,
         layoutDirection: LayoutDirection
-    ): IntPxPosition {
+    ): MeasureScope.MeasureResult {
+        MeasuringIntrinsicsMeasureBlocks { list, constraints, layoutDirection ->
+
+
+            TODO("")
+        }
         val density = Density(1f)
         val childSize = IntPxSize(1.ipx, 1.ipx)
         return density.modifyPosition(childSize, containerSize, layoutDirection)
